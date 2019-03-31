@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jquery Course</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+     
+    </script>
+    <style>
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 10px;
+            line-height: 1.5em;
+            background: #a14040;
+        }
+        header{
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px black solid;
+            margin-bottom: 10px;
+        }
+        #container{
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            width: 50%;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .container-anim{
+            height: 50px;
+            width: 50px;
+            margin-left: 10px;
+            margin-top: 10px;
+            position: relative;
+            padding: 10px;
+            color: red;
+            background: red;
+            margin-bottom: 1000px;
+            
+        }
+    </style>
+</head>
+<body>
+    <header> 
+        <h1>Jquery Crash Course</h1>
+    </header>
+    <div id="container">
+        <h1 id="heading1"> Heading one </h1>
+        <p id="para1">
+            Lorem ipsum  dolor sit, amet consectetur adipisicing elit. Sapiente qui cumque magni totam nisi numquam in consequuntur sequi, exercitationem, dolore dolorum quisquam veniam perferendis vero, consectetur doloribus laborum reiciendis commodi.
+
+        </p>
+
+        <h1 class="heading2"> Heading Two</h1>
+        <p class="para2">
+            Lorem ipsum  dolor sit, amet consectetur adipisicing elit. Sapiente qui cumque magni totam nisi numquam in consequuntur sequi, exercitationem, dolore dolorum quisquam veniam perferendis vero, consectetur doloribus laborum reiciendis commodi.
+
+        </p>
+    </div>
+    <div>
+        <ul id='list'>
+            <li> item 1</li>
+            <li> item 2</li>
+            <li> item 3</li>
+            <li> item 4</li>
+            <li> item 5</li>
+            <li> item 6</li>
+        </ul>
+    </div>
+
+    <button id="btn1" class="btn-class"> Button 1</button>
+    <button id="btn2"> Button 2</button>
+    <p class="parax">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam illo asperiores, harum natus atque dicta nulla molestiae ab eveniet quidem sed, laudantium sint enim consequatur et cumque recusandae doloremque explicabo?
+
+    </p>
+<div class="button-ctr-fade">
+    <h5> Use these buttons for animation</h5>
+
+    <button class="btn-1"> Fade out</button>
+    <button class="btn-2"> Fade in</button>
+    <button class="btn-3"> Fade Toggle</button>
+    
+</div>
+
+<div class="button-ctr-slide">
+        <h5> Use these buttons for animation</h5>
+    
+        <button class="btn-slideup"> Slide Up</button>
+        <button class="btn-slidedown"> Slide Down</button>
+        <button class="btn-slidetoggle"> Slide Toggle</button>
+        
+    </div>
+    <div id="container" class="box">
+        <h1> This is a container for animation</h1>
+
+    </div>
+
+
+    <button class="moveleft"> Move left</button>
+        <button class="moveright"> Move right</button>
+        <button class="movearound"> Move Around</button>
+    <div class="container-anim" id="space">
+            
+    </div>
+
+
+    <script>
+
+
+        // LEARNING JQUERY //
+
+
+            //$('h1').hide();
+           /* $('ul#list li:even').css('background-color','yellow');
+            $('#btn1').click(function(){
+                $('.parax').show();
+            });
+            $('#btn2').click(function(){
+                $('.parax').hide();
+            });
+            */
+
+        //     $('#btn1').click(function(){
+        //    $('.parax').toggle();
+
+        //    $('#btn1').on('mouseup',function(){
+        //          $('.parax').toggle();
+        //    });
+        //      $('#btn1').on('mousedown',function(){
+        //          $('.parax').toggle();
+        //    });
+
+            // $('#btn1').click(function(e){
+            //     console.log(e.currentTarget.id);
+            //      console.log(e.currentTarget.className);
+            //       console.log(e.currentTarget.innerHTML);
+            //        console.log(e.currentTarget.outerHTML);
+            //        console.log(e);
+                   
+                
+            // });
+
+                // ready() - When the DOM is ready then trigger the function inside.
+            // change(); - trigger whenever needed for any changes
+            // focus(); - inside input box
+            // blur(); - outside input box
+            // click(); - clicking the element thent rigger function
+            // on(); - on click/hover the element then trigger function
+            // keyup(); - type in the input box
+            // keydown(); - delete from input box
+            // submit(); - on submit function
+
+
+                    //toggle() - discontinued support ?
+
+
+                    $(document).ready(function(){
+                        $('.btn-1').click(function(){
+                            $('.box').fadeOut();
+                        });
+                    });
+
+                    $(document).ready(function(){
+                        $('.btn-2').click(function(){
+                            $('.box').fadeIn();
+                        });
+                    });
+
+                    $(document).ready(function(){
+                        $('.btn-3').click(function(){
+                            $('.box').fadeToggle();
+                        });
+                    });
+
+                    $(document).ready(function(){
+                        $('.btn-slideup').click(function(){
+                            $('.box').slideUp();
+                        });
+                    });
+                    $(document).ready(function(){
+                        $('.btn-slidedown').click(function(){
+                            $('.box').slideDown();
+                        });
+                    });
+                    $(document).ready(function(){
+                        $('.btn-slidetoggle').click(function(){
+                            $('.box').slideToggle();
+                        });
+                    });
+
+
+                        $('.moveright').click(function(){
+                            var box = $('.container-anim');
+                            box.animate({
+                                left: 500,
+                                height: '300px',
+                                width: '300px',
+                                opacity: '0.5'
+                            })
+                        });
+
+                        $('.moveleft').click(function(){
+                            var box = $('.container-anim');
+                            box.animate({
+                                left: 0,
+                                height: '50px',
+                                width: '50px',
+                                opacity: '1'
+
+                            })
+                        });
+
+                        $('.movearound').click(function(){
+                            var box = $('.container-anim');
+                            box.animate({
+                                left: 500
+                            });
+                            box.animate({
+                                top:500,
+                                left: 500
+                            });
+                            box.animate({
+                                left: 0,
+                                top: 500
+                            });
+                            box.animate({
+                                left: 0,
+                                top: 0
+                            });
+                        });
+
+
+                    
+
+           
+    </script>
+</body>
+</html>
