@@ -1,2 +1,2 @@
-# Web-Development
-Everything related to web development.
+# Code
+Every Piece of code that I've written or practiced.
