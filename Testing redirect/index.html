@@ -1,0 +1,13 @@
+<html>
+  <body>
+    <script language="javaScript">
+      var win = window.open('1.html');
+      function showChildURL(){
+        alert(win.location.pathname);
+        console.log(win.location.pathname);
+      }
+    </script>
+
+    <a href="javascript:showChildURL();">showChildURL</a>
+</body>
+</html>
